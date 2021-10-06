@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Detail</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <script src="{% static 'jquery/jquery-3.1.1.min.js' %}"></script>
+
+</head>
+<body class="container">
+<table class="table_price" id="table_price" style="width: 100%; margin: 0 auto 20px;">
+    <caption>
+        <div>Пациент</div>
+    </caption>
+    <thead>
+    <th>Id</th>
+    <th>Имя</th>
+    <th>Возраст</th>
+    </thead>
+    <tr id="person-{{ person.id }}">
+        <td>{{ person.id }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+    </tr>
+</table>
+
+{% if stats.count > 0 %}
+    <table class="table_price" style="width: 100%; margin: 0 auto 20px; ">
+        <caption style="border-radius: 0">
+            <div>Показатели</div>
+        </caption>
+        <thead>
+        <th>Дата</th>
+        <th>Кол-во шагов</th>
+        <th>Скорость</th>
+        <th></th>
+        </thead>
+        {% for stat in stats %}
+            <tr id="stat-{{ stat.id }}">
+                <td>{{ person.id }}</td>
+                <td><a href="detail/{{ stat.date }}" class="name_ref">{{ stat.count_of_steps }}</a></td>
+                <td>{{ stat.speed }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<div onclick="start_stop('start')" id="btnStart">Старт</div>
+
+<div class="flexbox">
+    <div class="wrapper">
+        <canvas id="mapXY" class="map"></canvas>
+        <div id="coordXY" class="coord">
+            <div>X: 0</div>
+            <div>Y: 0</div>
+        </div>
+    </div>
+    <div class="wrapper" style="width: 100px">
+        <canvas id="height"></canvas>
+        <div id="heightValue">0px</div>
+    </div>
+    <div class="wrapper">
+        <canvas id="mapXZ" class="map"></canvas>
+        <div id="coordXZ" class="coord">
+            <div>X: 0</div>
+            <div>Z: 0</div>
+        </div>
+    </div>
+</div>
+
+<div id="hidden" style="visibility: hidden">
+    Результат
+    <div class="flexbox" style="height: 0">
+        <div class="wrapper">
+            <img src="{% static '1.png' %}" class="imgRes" id="img1"/>
+        </div>
+        <div class="wrapper">
+            <img src="{% static '2.png' %}" class="imgRes" id="img2"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<script type="text/javascript" src="{% static 'popup.js' %}"></script>
+<script type="text/javascript" src="{% static 'tracker.js' %}"></script>
+</body>
+</html>

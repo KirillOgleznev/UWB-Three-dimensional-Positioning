@@ -1,0 +1,226 @@
+#tracker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: blue;
+}
+
+
+.table_price {
+    margin: 50px auto;
+    border-collapse: collapse;
+    border-left: 3px solid #14a8ee;
+    border-right: 3px solid #14a8ee;
+    border-bottom: 3px solid #14a8ee;
+    font-family: "Lucida Grande", sans-serif;
+}
+
+.table_price caption {
+    height: 40px;
+    background: #14a8ee;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-style: normal;
+    font-size: 26px;
+    text-align: center;
+    margin: 0;
+}
+
+.table_price td, .table_price th {
+    padding: 10px;
+}
+
+.table_price th {
+    text-align: left;
+    font-size: 18px;
+}
+
+.table_price thead {
+    background: #e0f5fa;
+}
+
+.table_price tr:nth-child(2n) {
+    background: #e0f5fa;
+}
+
+.btn_ref {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    background: #14a8ee;
+    box-shadow: 0 0 0 0 #041d86 inset;
+    position: relative;
+    transition: box-shadow 0.4s;
+    cursor: pointer;
+}
+
+.btn_ref:hover {
+    box-shadow: 0 0 8px -2px #08257d inset;
+}
+
+.name_ref {
+    color: #0a0a80;
+    padding: 5px 10px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.name_ref:hover {
+    color: #14a8ee;
+}
+
+.add {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    float: right;
+    bottom: 30px;
+    background: white;
+    color: #0a0a80;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 17px;
+    margin-right: 5px;
+    margin-top: 3px;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.add:hover {
+    box-shadow: 0 0 8px -1px #ffffff;
+}
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; /* см. ниже */
+    align-items: center;
+}
+
+#modal {
+    background: #14a8ee;
+    display: inline-block;
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+    transform: scale(1);
+}
+
+.coord {
+    margin-top: 10px;
+    /*flex: 0 1 100px;*/
+    display: flex;
+}
+
+.coord div {
+    display: inline-block;
+    margin: auto;
+}
+
+
+#testTM {
+    flex: 0 1 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+#testTM div {
+    display: inline-block;
+    margin: auto;
+}
+
+
+.wrapper {
+    width: 500px;
+    margin: 20px;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: stretch;
+}
+
+.flexbox div:first-child {
+    margin-left: 0;
+}
+
+.map {
+    transform: scale(1, -1);
+    border: 3px solid black;
+}
+
+#height {
+    transform: scale(1, -1);
+    border: 3px solid black;
+}
+
+#valuesTM {
+    flex: 0 1 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+#valuesTM div {
+    display: inline-block;
+    margin: auto;
+}
+
+.mySlider {
+    margin: 10px;
+    width: 480px;
+}
+
+#heightValue {
+    width: 60px;
+}
+
+#btnStop {
+    background-color: rgb(212,75,56);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnStop:hover { background: rgb(232,95,76); }
+#btnStop:active { background: rgb(152,15,0); }
+
+#btnStart {
+    background-color: rgb(64,199,129);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnStart:hover { background: rgb(53, 167, 110); }
+#btnStart:active { background: rgb(33,147,90) }
+
+.imgRes {
+    border: 3px solid black;
+    width: 500px;
+    height: 500px;
+}

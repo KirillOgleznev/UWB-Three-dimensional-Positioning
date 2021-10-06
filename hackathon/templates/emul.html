@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Эмулятор</title>
+    <script src="{% static 'jquery/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'jquery/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'jquery/jquery.ui.touch-punch.min.js' %}"></script>
+    <link href="{% static 'jquery/emulator.css' %}" rel="stylesheet">
+    <link href="{% static 'jquery/jquery-ui.css' %}" rel="stylesheet">
+</head>
+<body class="container">
+
+	<div class="wrapper">
+		<canvas id="mapXY"></canvas>
+		<div id="valuesXY" class="valuesTM"></div>
+		<canvas id="mapXZ"></canvas>
+		<div id="valuesXZ" class="valuesTM"></div>
+	</div>
+
+	<b>X: <span style="color:green" id="resultX"></span></b>
+	<div class="mySlider" id="sliderX"></div>
+	<b>Y: <span style="color:green" id="resultY"></span></b>
+	<div class="mySlider" id="sliderY"></div>
+	<b>Z: <span style="color:green" id="resultZ">0</span></b>
+	<div class="mySlider" id="sliderZ"></div>
+
+<script type="text/javascript" src="{% static 'js.js' %}"></script>
+</body>
+</html>

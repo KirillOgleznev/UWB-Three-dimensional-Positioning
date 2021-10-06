@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>All</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <script src="{% static 'jquery/jquery-3.1.1.min.js' %}"></script>
+</head>
+<body class="container">
+    {% if people.count > 0 %}
+    <table class="table_price" id="table_price" >
+        <caption>
+            <div>Пациенты</div>
+            <div onclick="popup()" class="add">Добавить</div>
+        </caption>
+        <thead><th>Id</th><th>Имя</th><th>Возраст</th><th></th></thead>
+        {% for person in people %}
+        <tr id="person-{{person.id}}">
+            <td>{{ person.id }}</td>
+            <td><a href="detail/{{person.id}}" class="name_ref">{{ person.name }}</a></td>
+            <td>{{ person.age }}</td>
+            <td>
+                <div class="btn_ref" onclick="edit({{person.id}})">Изменить</div>
+                <div class="btn_ref" onclick="del({{person.id}})">Удалить</div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+    <script type="text/javascript" src="{% static 'popup.js' %}"></script>
+    <script type="text/javascript" src="{% static 'tracker.js' %}"></script>
+</body>
+</html>
